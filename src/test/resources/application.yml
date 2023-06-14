@@ -1,0 +1,35 @@
+# Test
+spring:
+  profiles:
+    active: local
+
+# local 환경
+---
+server:
+  address: localhost
+  port: 8080
+
+spring:
+  profiles: local
+  datasource:
+    url: ENC(qJcIphp38nLK6wAUrFUJv6MsP1XaMwEHY2nO22BQEPIEF8yWA1eQIUCsVxDIZ6XJm70jIm8XjBGlxKblYHGFx/MaGU7c0Zz2I4nnLYTe3YD8ne+n9g1VZwwhpdS666PEEkkhFraY9Ck84lIoFmTROXRhW38rkBLyxoOSQlQI55T1bpH63BQnf+HoTp04ZMF34fp8cuRUSTY=)
+    username: ENC(CVvoCs9unAb7HYfMOFNL2iuSbkbF+mPj)
+    password: ENC(45XIx7pX2J452h/sW7SQI58rL7q/N9bpb5oEBacKBks=)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+  properties:
+    hibernate:
+      show_sql: true
+      format_sql: true
+      use_sql_comments: true
+
+logging:
+  level:
+    org:
+      hibernate: info
